@@ -1,3 +1,5 @@
 bin/
 *.class
 .settings/
+src/main/resources/META-INF/persistence.xml
+target/

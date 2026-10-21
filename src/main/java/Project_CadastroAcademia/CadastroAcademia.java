@@ -72,9 +72,7 @@ public class CadastroAcademia {
 			String alternativa = entrada.nextLine();
 			switch (alternativa) {
 
-			case "A": // CADASTRAR
-
-				// DADOS DO ALUNO
+			case "A": 
 
 				System.out.println("-----DADOS DO ALUNO----");
 
@@ -125,7 +123,7 @@ public class CadastroAcademia {
 				alunos.add(aluno);
 
 				break;
-			case "B": // LISTAR TODOS
+			case "B": 
 
 				for (Aluno listartodos : alunos) {
 					if (listartodos != null) {
@@ -138,7 +136,7 @@ public class CadastroAcademia {
 
 				}
 				break;
-			case "C": // ALTERAR
+			case "C": 
 
 				Aluno encontrado = null;
 
@@ -270,7 +268,7 @@ public class CadastroAcademia {
 
 				break;
 
-			case "E": // ADICIONAR
+			case "E": 
 
 				Aluno encontradoAv = null;
 

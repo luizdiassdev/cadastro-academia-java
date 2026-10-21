@@ -2,17 +2,34 @@ package Project_CadastroAcademia;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-
-
+import jakarta.persistence.*;
+@Entity
+@Table(name = "aluno")
 public class Aluno {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY )
+	private Integer id;
+	
+	@Column(name = "data_nascimento")
 	private LocalDate datadenascimento;
+	
 	private String nome;
+	
+	@Column(unique = true, nullable = false)
 	private String cpf;
+	@Transient
 	private Endereco endereco;
 	private String objetivo;
 	private String telefone;
-	private ArrayList<Avaliacao> avaliacoes;
+	@Transient
+	private ArrayList<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
 	private String observacoes;
+	
+	protected Aluno() {
+		
+	}	
+	
 	public Aluno(LocalDate datadenascimento, String nome, String cpf, Endereco endereco, String objetivo,
 			String telefone, String observacoes) {
 		super();
@@ -72,9 +89,18 @@ public class Aluno {
 		this.observacoes = observacoes;
 	}
 	
+	
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public void adicionarAvaliacao(Avaliacao av) {
 		avaliacoes.add(av);
 	}
+	
 	
 	
 	@Override
@@ -82,6 +108,7 @@ public class Aluno {
 		
 		return getDatadenascimento() + ";\n " + getNome()+ ";\n " + getCpf() + ";\n " + getEndereco() + ";\n " + getObjetivo() + ";\n " + getTelefone() +  ";\n " + getObservacoes() + ";\n " + getAvaliacoes() ;
 	}
+	
 	
 	
 	
